@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Registration Form</title>
+  <link rel="stylesheet" href="form.css">
+  
+</head>
+<body>
+  <div class="container">
+    <h2>College Registration Form</h2>
+    <form id="registration-form" onsubmit="submitForm(event)">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+      </div>
+      <input type="submit" value="Register">
+    </form>
+    <div id="message" class="success"></div>
+  </div>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      // Perform validation and other operations here
+
+      // Example: Display a success message
+      document.getElementById("message").textContent = "Registration successful!";
+      
+      // Clear form inputs
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
+    }
+  </script>
+  <form class="button">
+    <input type="button" value="Go back!" onclick="history.back()">
+   </form>
+</body>
+</html>
